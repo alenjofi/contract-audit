@@ -2,46 +2,36 @@
 
 # ⚖️ Fine Print Breaker
 
-**AI-Powered Contract Risk Auditor**
+**AI-Powered Contract Risk Auditor & Solver**
 
 > *Built with "Vibe Coding" in Google AI Studio.*
 
-Fine Print Breaker is a client-side web application designed to protect freelancers, tenants, and employees from predatory legal agreements. It uses Google's **Gemini 2.5 Flash** model to audit contracts, identifying hidden traps, unfair clauses, and "legalese" that could hurt the signatory.
+Fine Print Breaker is a client-side web application designed to protect freelancers, tenants, and employees from predatory legal agreements. Unlike standard analyzers, **it doesn't just find the problems—it fixes them.**
+
+It uses **Google's Gemini 2.5 Flash** model to audit contracts, identify hidden traps, and **rewrite unfair clauses** into standard, mutual legal language instantly.
 
 ## 🚀 Live Demo
 [https://alenjofi.github.io/contract-audit/](https://alenjofi.github.io/contract-audit/)
 
 ## ✨ Key Features
 
-* **📄 Multi-Format Support:** Drag and drop **PDF, DOCX, TXT, or MD** files (up to 10MB).
-* **🎯 Context-Aware Analysis:** Select your specific contract type for tailored auditing:
-    * **Freelance:** Checks for IP theft, non-competes, and late payment clauses.
-    * **Employment:** Reviews termination rights, severance, and benefits.
-    * **Lease:** Audits rent escalation, deposit returns, and repair duties.
-    * **NDA:** Analyzes confidentiality scope and duration.
-* **📊 Risk Scoring System:** Instantly generates a **0-100 Risk Score** (Safe, Caution, or High Risk).
-* **👶 ELI5 Explanations:** Translates complex legal jargon into "Explain Like I'm 5" simple English.
-* **💬 AI Rebuttal Generator:** Found a bad clause? Click a button to generate a professional, firm negotiation email to push back.
-* **🔒 Privacy-Focused:** The app runs entirely in the browser. Files are processed transiently and are not stored on any server.
+* **🔍 Instant Risk Audit:** Drag and drop **PDF, DOCX, TXT, or MD** files (up to 10MB) for a 20-point legal safety check.
+* **✨ AI Clause Rewriter:** Found a predatory clause? Click **"Fix Clause"** to have the AI legally redraft it to be fair and mutual.
+* **🖨️ Professional PDF Export:** One-click download of the full audit report, stripped of UI elements, ready to email to a lawyer or client.
+* **🎯 Context-Aware Analysis:** Tailored logic for **Freelance, Employment, Lease, and NDA** contracts.
+* **🛡️ 100% Privacy Focused:** The app runs entirely in the browser. Files are processed transiently in memory and are **never stored** on any server.
 
 ## 🛠️ Tech Stack
 
-This project works as a **Single File Application**, meaning the entire logic, styling, and UI are contained within `index.html`.
+This project is architected as a **Single File Application (SFA)** for maximum portability and security.
 
 * **Frontend:** React 18 (via CDN)
 * **Styling:** Tailwind CSS (via CDN) + Custom Animations
 * **AI Model:** Google Gemini 2.5 Flash (via `@google/genai` SDK)
-* **File Processing:** Native Browser `FileReader` API (Client-side)
-* **Icons:** Lucide-style SVG components
+* **Engine:** Browser Native `FileReader` & `window.print()` API
+* **Icons:** Lucide-React SVG components
 
-## 🧠 How It Works
-
-1.  **Input:** The user selects a contract category and uploads a document.
-2.  **Processing:** The browser converts the file to Base64.
-3.  **Analysis:** The file is sent to the Gemini API with a strict system instruction acting as a "Senior Contract Lawyer."
-4.  **Structured Output:** The AI returns a JSON object containing the risk score, critical warnings, and summary.
-5.  **Visualization:** React renders the data into a dashboard with a dynamic SVG risk gauge and interactive warning cards.
-6.  ## 🏗️ System Architecture
+## 🧠 System Architecture
 
 ```mermaid
 graph LR
@@ -49,6 +39,8 @@ graph LR
     B -- FileReader API --> C{Local Processing}
     C -- Base64 Conversion --> D[Gemini 2.5 Flash API]
     D -- JSON Analysis --> B
+    B -- "Fix Clause" Request --> D
+    D -- Rewritten Text --> B
     B -- React Render --> E[Interactive Dashboard]
     style D fill:#f59e0b,stroke:#333,stroke-width:2px
 ```
