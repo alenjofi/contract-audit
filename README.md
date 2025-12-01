@@ -9,7 +9,7 @@
 Fine Print Breaker is a client-side web application designed to protect freelancers, tenants, and employees from predatory legal agreements. It uses Google's **Gemini 2.5 Flash** model to audit contracts, identifying hidden traps, unfair clauses, and "legalese" that could hurt the signatory.
 
 ## 🚀 Live Demo
-[Insert your GitHub Pages link here, e.g., https://alenjofi.github.io]
+[https://alenjofi.github.io/contract-audit/](https://alenjofi.github.io/contract-audit/)
 
 ## ✨ Key Features
 
@@ -48,7 +48,7 @@ Since this is a static site, you don't need `npm install` or a build process.
 
 1.  **Clone the repo:**
     ```bash
-    git clone [https://github.com/alenjofi/alenjofi.github.io.git](https://github.com/alenjofi/alenjofi.github.io.git)
+    git clone [https://github.com/alenjofi/contract-audit.git](https://github.com/alenjofi/contract-audit.git)
     ```
 2.  **Open `index.html`** in any modern web browser.
 3.  **That's it!** The app will load immediately.
